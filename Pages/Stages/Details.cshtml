@@ -1,0 +1,49 @@
+@page
+@model RazorPagesStageManagerSupinfo.Pages.Stages.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Détails</h1>
+
+<div>
+    <h4>Stage</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Stage.Titre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Stage.Titre)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Stage.Societe)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Stage.Societe)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Stage.Date)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Stage.Date)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Stage.Nombredejour)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Stage.Nombredejour)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Stage.Commentaire)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Stage.Commentaire)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Stage.ID">Modifier</a> |
+    <a asp-page="./Index">Revenir à la liste</a>
+</div>

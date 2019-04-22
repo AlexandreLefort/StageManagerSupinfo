@@ -1,0 +1,83 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Bienvenue</h1>
+
+    <br>
+    <br>
+
+    <h3>Avant de commencer merci de vous connecter ou de vous inscrire</h3>
+    <br>
+
+        <button onclick="document.getElementById('id01').style.display='block'" style="width:auto;">Connexion</button>
+
+        <div id="id01" class="modal">
+
+            <form class="modal-content animate" action="/action_page.php">
+
+                <div class="container">
+                    <label for="uname"><b>Nom</b></label>
+                    <input type="text" placeholder="Enter un Nom" name="uname" required>
+
+                    <label for="uname"><b>Prénom</b></label>
+                    <input type="text" placeholder="Enter un Prénom" name="uname" required>
+
+                    <label for="psw"><b>Mot de Passe</b></label>
+                    <input type="password" placeholder="Enter Mot de passe" name="psw" required>
+
+                    <input type="button" value="Connexion" OnClick="window.location.href='https://localhost:5001/Stages'"/>
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember"> Se souvenir de moi
+                        </label>
+</div>
+                <div class="container" style="background-color:#f1f1f1">
+                    <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+
+                </div>
+
+            </form>
+        </div>
+
+
+
+        <button onclick="document.getElementById('id02').style.display='block'" style="width:auto;">S'inscrire</button>
+
+        <div id="id02" class="modal">
+
+            <form class="modal-content animate" action="/action_page.php">
+            
+                <div class="container">
+                    <label for="uname"><b>Nom</b></label>
+                    <input type="text" placeholder="Enter un Nom" name="uname" required>
+
+                    <label for="uname"><b>Prénom</b></label>
+                    <input type="text" placeholder="Enter un Prénom" name="uname" required>
+
+                    <label for="psw"><b>Mot de passe</b></label>
+                    <input type="password" placeholder="Enter un Mot de Passe" name="psw" required>
+
+                    <label for="psw"><b>Mot de passe</b></label>
+                    <input type="password" placeholder="Enter un Mot de Passe" name="psw" required>
+
+                    <input type="button" value="Connexion" OnClick="window.location.href='https://localhost:5001/Stages'" />
+
+                </div>
+
+               <div class="container" style="background-color:#f1f1f1">
+                    <button type="button" onclick="document.getElementById('id02').style.display='none'" class="cancelbtn">Cancel</button>
+                    
+                </div>
+            </form>
+        </div>
+
+
+
+
+
+
+
+</div>

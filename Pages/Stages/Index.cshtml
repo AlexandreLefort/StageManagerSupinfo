@@ -1,0 +1,82 @@
+@page
+@model RazorPagesStageManagerSupinfo.Pages.Stages.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<header>
+    <a href="/Planning" target="_blank"><input type="submit" value="Voir le planning" /></a>
+    <a href="/Index" target="_blank"><input type="submit" value="Se déconnecter" /></a>
+</header>
+
+
+
+<style>
+    input {
+
+        cursor: pointer;
+        text-transform: capitalize;
+        padding: 6px 0 6px 0;
+        font: Bold 13px Arial;
+        background: #d34836;
+        color: #fff;
+        width: 120px;
+        border-radius: 2px;
+        border: none;
+    }
+</style>
+
+<h1>Mes stages</h1>
+
+<p>
+    <a asp-page="Create">Ajouter</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Stage[0].Titre)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stage[0].Societe)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stage[0].Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stage[0].Nombredejour)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Stage[0].Commentaire)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Stage) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Titre)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Societe)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nombredejour)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Commentaire)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
